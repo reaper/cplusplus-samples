@@ -1,36 +1,25 @@
 #include <iostream>
 #include <complex>
-#include "complex_processing.h"
+#include "complex.h"
 using namespace std;
 
+int main () {
 
-int addition(int a, int b) {
-	int r;
-	r = a+b;
-	return r;
-}
+	// A = 12 + 4i
+	complex<double> a(12, 4);
+	// B = -45 + 2,5
+	complex<double> b(-45, 2.5);
 
-int main ()
-{
+	Complex comp_a(a);
+	cout << "Create complex A = " << comp_a.get_comp_as_string() << endl;
+	Complex comp_b(b);
+	cout << "Create complex B = " << comp_b.get_comp_as_string() << endl;
 
-	ComplexProcessing cp;
-	complex<double> a(1, 2);
-	complex<double> b(1, 2);
-	complex<double> result = cp.addition(a, b);
+	cout << "Addition: A + B" << endl;
+	comp_a.add(comp_b);
+	cout << comp_a.get_result_as_string() << endl;
 
-	cout << result << endl;
-	// complex<int> z(1, 2);
-	// complex<int> zz,I(0, 1); 
-	// zz=3+I*4; 
-	// complex<int> zzz = z + zz;
-	// cout<<z<<"+"<<zz<<"="<<zzz<<endl;  
-	// cout<<"Complexe Conjugue "<<conj(zzz)<<endl; 
-	// cout<<"Partie Reelle "<<real(zzz)<<endl; 
-	// cout<<"Partie Imaginaire "<<imag(zzz)<<endl; 
-	// cout<<"Module Carre "<<norm(zzz)<<endl; 
-	// cout<<"Module "<<abs(zzz)<<endl; 
-	// cout<<"Argument "<<arg(zzz)<<endl; 
-	// cout<<"I*I="<<I*I<<endl; 
-	// cout<<"sqrt(-1)="<<sqrt(complex<int>(-1))<<endl; 
-	// return 0;
+	cout << "Addition: B - A" << endl;
+	comp_b.subtract(comp_a);
+	cout << comp_b.get_result_as_string() << endl;
 }
