@@ -1,5 +1,5 @@
 #include <iostream>
-#include "complex.h"
+#include "complex.hpp"
 using namespace std;
 
 Complex::Complex(complex<double> v_comp) {
