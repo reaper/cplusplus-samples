@@ -1,22 +1,22 @@
-#include <iostream>
-#include <complex>
+#ifndef COMPLEX_H_
+#define COMPLEX_H_
 
-using namespace std;
+#include <iostream>
 
 class Complex {
 	private:
-		complex<double> comp;
-		complex<double> tmp_comp;
-
-		string get_comp_as_string(complex<double> v_comp);
+		double _real;
+		double _imag;
 
 	public:
-		complex<double> get_comp();
-		Complex(complex<double> v_comp);
-		void add(complex<double> v_comp);
-		void add(Complex v_complex);
-		void subtract(complex<double> v_comp);
-		void subtract(Complex v_complex);
-		string get_comp_as_string();
-		string get_result_as_string();
+		Complex( double real, double imag );
+		double real();
+		double imag();
+		std::string to_string();
+		void operator+=( const Complex comp );
+		void operator-=( const Complex comp );
+		Complex operator+( const Complex comp );
+		Complex operator-( const Complex comp );
 };
+
+#endif

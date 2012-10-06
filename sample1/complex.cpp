@@ -1,56 +1,69 @@
 #include <iostream>
+#include <sstream>
 #include "complex.hpp"
-using namespace std;
 
-Complex::Complex(complex<double> v_comp) {
-	comp = v_comp;
+// ComplexSample constructor
+Complex::Complex( double real, double imag ) : _real(real), _imag(imag) 
+{}
+
+// Real number getter
+double Complex::real()
+{
+	return _real;
 }
 
-void Complex::add(complex<double> v_comp) {
-	tmp_comp = comp + v_comp;
+// Imaginary number getter
+double Complex::imag()
+{
+	return _imag;
 }
 
-void Complex::add(Complex v_complex) {
-	tmp_comp = comp + v_complex.get_comp();
+// Add complex to this
+void Complex::operator+=( Complex comp )
+{
+	_real += comp.real();
+	_imag += comp.imag();
 }
 
-void Complex::subtract(complex<double> v_comp) {
-	tmp_comp = comp - v_comp;
+// Substract a complex to this
+void Complex::operator-=( Complex comp )
+{
+	_real -= comp.real();
+	_imag -= comp.imag();
 }
 
-void Complex::subtract(Complex v_complex) {
-	tmp_comp = comp - v_complex.get_comp();
+// Add complex to this
+Complex Complex::operator+( Complex comp )
+{
+	_real += comp.real();
+	_imag += comp.imag();
+	return *this;
 }
 
-complex<double> Complex::get_comp() {
-	return comp;
+// Substract a complex to this
+Complex Complex::operator-( Complex comp )
+{
+	_real -= comp.real();
+	_imag -= comp.imag();
+	return *this;
 }
 
-string Complex::get_comp_as_string(complex<double> v_comp) {
-	ostringstream ostr; 
-	double real_comp = real(v_comp);
-	double imag_comp = imag(v_comp);
+// Return std::string complex
+std::string Complex::to_string() 
+{
+	std::ostringstream ostr; 
 
-	ostr << real_comp;
+	ostr << _real;
 
-	if(imag_comp > 0) {
+	if(_imag > 0) {
 		ostr << " + ";
-		ostr << imag_comp;
+		ostr << _imag;
 	} else {
-		imag_comp = imag_comp*(-1);
+		_imag = _imag*(-1);
 		ostr << " - ";
-		ostr << imag_comp;
+		ostr << _imag;
 	}
 	ostr << "i";
 
-	string str = ostr.str();
-	return str;
-}
-
-string Complex::get_comp_as_string() {
-	return get_comp_as_string(comp);	
-}
-
-string Complex::get_result_as_string() {
-	return get_comp_as_string(tmp_comp);	
+	return ostr.str();
 }

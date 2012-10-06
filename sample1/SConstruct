@@ -1,2 +1,2 @@
 env = Environment()
-env.Program(target='main', source=Glob('*.cpp'))
+env.Program(target='sample1', source=Glob('*.cpp'))

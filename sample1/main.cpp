@@ -1,25 +1,30 @@
 #include <iostream>
-#include <complex>
 #include "complex.hpp"
-using namespace std;
 
 int main () {
 
-	// A = 12 + 4i
-	complex<double> a(12, 4);
-	// B = -45 + 2,5
-	complex<double> b(-45, 2.5);
+	Complex comp_a(double(15), double(-3));
+	Complex comp_b(double(23), double(-17));
+	Complex comp_c(double(-3), double(36));
+	Complex comp_d(double(-28), double(12));
 
-	Complex comp_a(a);
-	cout << "Create complex A = " << comp_a.get_comp_as_string() << endl;
-	Complex comp_b(b);
-	cout << "Create complex B = " << comp_b.get_comp_as_string() << endl;
+	// Add comp_b to comp_a
+	std::cout << "// (" << comp_a.to_string() << ") += (" << comp_b.to_string() << ")" << std::endl;
+	comp_a += comp_b;
+	std::cout << "=> " << comp_a.to_string() << std::endl;
 
-	cout << "Addition: A + B" << endl;
-	comp_a.add(comp_b);
-	cout << comp_a.get_result_as_string() << endl;
+	// Substract comp_c to comp_a
+	std::cout << "\n// (" << comp_a.to_string() << ") -= (" << comp_c.to_string() << ")" << std::endl;
+	comp_a -= comp_c;
+	std::cout << "=> " << comp_a.to_string() << std::endl;
 
-	cout << "Addition: B - A" << endl;
-	comp_b.subtract(comp_a);
-	cout << comp_b.get_result_as_string() << endl;
+	// Add comp_d to comp_a
+	std::cout << "\n// x = (" << comp_a.to_string() << ") + (" <<  comp_d.to_string() << ")" << std::endl;
+	Complex comp_e = comp_a + comp_d;
+	std::cout << "=> " << comp_e.to_string() << std::endl;
+
+	// Substract comp_c to comp_e
+	std::cout << "\n// x = (" << comp_e.to_string() << ") - (" <<  comp_c.to_string() << ")" << std::endl;
+	Complex comp_f = comp_e - comp_c;
+	std::cout << "=> " << comp_f.to_string() << std::endl;
 }

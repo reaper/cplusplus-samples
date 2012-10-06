@@ -1,4 +1,3 @@
 *.o
-complex
 .scons*
-main
+sample1
