@@ -3,10 +3,10 @@
 
 int main () {
 
-	Complex comp_a(double(15), double(-3));
-	Complex comp_b(double(23), double(-17));
-	Complex comp_c(double(-3), double(36));
-	Complex comp_d(double(-28), double(12));
+	Complex comp_a(15, -3);
+	Complex comp_b(23, -17);
+	Complex comp_c(-3, 36);
+	Complex comp_d(-28, 12);
 
 	// Add comp_b to comp_a
 	std::cout << "// (" << comp_a.to_string() << ") += (" << comp_b.to_string() << ")" << std::endl;

@@ -3,48 +3,52 @@
 #include "complex.hpp"
 
 // ComplexSample constructor
-Complex::Complex( double real, double imag ) : _real(real), _imag(imag) 
+Complex::Complex( double real, double imag ) : m_real(real), m_imag(imag) 
 {}
 
 // Real number getter
 double Complex::real()
 {
-	return _real;
+	return m_real;
 }
 
 // Imaginary number getter
 double Complex::imag()
 {
-	return _imag;
+	return m_imag;
 }
 
 // Add complex to this
-void Complex::operator+=( Complex comp )
+Complex Complex::operator+=( Complex comp )
 {
-	_real += comp.real();
-	_imag += comp.imag();
+	m_real += comp.real();
+	m_imag += comp.imag();
+
+	return *this;
 }
 
 // Substract a complex to this
-void Complex::operator-=( Complex comp )
+Complex Complex::operator-=( Complex comp )
 {
-	_real -= comp.real();
-	_imag -= comp.imag();
+	m_real -= comp.real();
+	m_imag -= comp.imag();
+
+	return *this;
 }
 
 // Add complex to this
 Complex Complex::operator+( Complex comp )
 {
-	_real += comp.real();
-	_imag += comp.imag();
+	m_real += comp.real();
+	m_imag += comp.imag();
 	return *this;
 }
 
 // Substract a complex to this
 Complex Complex::operator-( Complex comp )
 {
-	_real -= comp.real();
-	_imag -= comp.imag();
+	m_real -= comp.real();
+	m_imag -= comp.imag();
 	return *this;
 }
 
@@ -53,15 +57,15 @@ std::string Complex::to_string()
 {
 	std::ostringstream ostr; 
 
-	ostr << _real;
+	ostr << m_real;
 
-	if(_imag > 0) {
+	if(m_imag > 0) {
 		ostr << " + ";
-		ostr << _imag;
+		ostr << m_imag;
 	} else {
-		_imag = _imag*(-1);
+		m_imag = m_imag*(-1);
 		ostr << " - ";
-		ostr << _imag;
+		ostr << m_imag;
 	}
 	ostr << "i";
 
