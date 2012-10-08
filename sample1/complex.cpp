@@ -37,23 +37,23 @@ Complex& Complex::operator-=( const Complex &comp )
 }
 
 // Add complex to this
-Complex Complex::operator+( Complex comp )
+Complex Complex::operator+(const Complex comp ) const
 {
-	m_real += comp.real();
-	m_imag += comp.imag();
-	return *this;
+	Complex res = *this;
+	res += comp;
+	return res;
 }
 
 // Substract a complex to this
-Complex Complex::operator-( Complex comp )
+Complex Complex::operator-(const Complex comp ) const
 {
-	m_real -= comp.real();
-	m_imag -= comp.imag();
-	return *this;
+	Complex res = *this;
+	res -= comp;
+	return res;
 }
 
 // Return std::string complex
-std::string Complex::to_string() 
+std::string Complex::to_string() const
 {
 	std::ostringstream ostr; 
 
@@ -63,9 +63,8 @@ std::string Complex::to_string()
 		ostr << " + ";
 		ostr << m_imag;
 	} else {
-		m_imag = m_imag*(-1);
 		ostr << " - ";
-		ostr << m_imag;
+		ostr << m_imag*(-1);
 	}
 	ostr << "i";
 
