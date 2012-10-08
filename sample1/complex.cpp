@@ -3,7 +3,7 @@
 #include "complex.hpp"
 
 // ComplexSample constructor
-Complex::Complex( double real, double imag ) : 
+Complex::Complex(double real, double imag) : 
 	m_real(real), 
 	m_imag(imag) 
 {}
@@ -21,7 +21,7 @@ double Complex::imag() const
 }
 
 // Add complex to this
-Complex& Complex::operator+=( const Complex &comp )
+Complex& Complex::operator+=(const Complex &comp)
 {
 	m_real += comp.real();
 	m_imag += comp.imag();
@@ -29,7 +29,7 @@ Complex& Complex::operator+=( const Complex &comp )
 }
 
 // Substract a complex to this
-Complex& Complex::operator-=( const Complex &comp )
+Complex& Complex::operator-=(const Complex &comp)
 {
 	m_real -= comp.real();
 	m_imag -= comp.imag();
@@ -37,7 +37,7 @@ Complex& Complex::operator-=( const Complex &comp )
 }
 
 // Add complex to this
-Complex Complex::operator+(const Complex comp ) const
+Complex Complex::operator+(const Complex comp) const
 {
 	Complex res = *this;
 	res += comp;
@@ -45,7 +45,7 @@ Complex Complex::operator+(const Complex comp ) const
 }
 
 // Substract a complex to this
-Complex Complex::operator-(const Complex comp ) const
+Complex Complex::operator-(const Complex comp) const
 {
 	Complex res = *this;
 	res -= comp;
