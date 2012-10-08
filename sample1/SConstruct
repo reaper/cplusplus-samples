@@ -1,2 +1,3 @@
 env = Environment()
+env.Append(CCFLAGS = '-g -Wall -Werror')
 env.Program(target='sample1', source=Glob('*.cpp'))

@@ -10,11 +10,11 @@ class Complex {
 
 	public:
 		Complex( double real, double imag );
-		double real();
-		double imag();
+		double real() const;
+		double imag() const;
 		std::string to_string();
-		Complex operator+=( const Complex comp );
-		Complex operator-=( const Complex comp );
+		Complex& operator+=( const Complex &comp );
+		Complex& operator-=( const Complex &comp );
 		Complex operator+( const Complex comp );
 		Complex operator-( const Complex comp );
 };

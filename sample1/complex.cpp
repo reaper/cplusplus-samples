@@ -3,36 +3,36 @@
 #include "complex.hpp"
 
 // ComplexSample constructor
-Complex::Complex( double real, double imag ) : m_real(real), m_imag(imag) 
+Complex::Complex( double real, double imag ) : 
+	m_real(real), 
+	m_imag(imag) 
 {}
 
 // Real number getter
-double Complex::real()
+double Complex::real() const
 {
 	return m_real;
 }
 
 // Imaginary number getter
-double Complex::imag()
+double Complex::imag() const
 {
 	return m_imag;
 }
 
 // Add complex to this
-Complex Complex::operator+=( Complex comp )
+Complex& Complex::operator+=( const Complex &comp )
 {
 	m_real += comp.real();
 	m_imag += comp.imag();
-
 	return *this;
 }
 
 // Substract a complex to this
-Complex Complex::operator-=( Complex comp )
+Complex& Complex::operator-=( const Complex &comp )
 {
 	m_real -= comp.real();
 	m_imag -= comp.imag();
-
 	return *this;
 }
 
