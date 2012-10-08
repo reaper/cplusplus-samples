@@ -64,7 +64,7 @@ std::string Complex::to_string() const
 		ostr << m_imag;
 	} else {
 		ostr << " - ";
-		ostr << m_imag*(-1);
+		ostr << -m_imag;
 	}
 	ostr << "i";
 
