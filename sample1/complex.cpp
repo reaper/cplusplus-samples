@@ -37,7 +37,7 @@ Complex& Complex::operator-=(const Complex &comp)
 }
 
 // Add complex to this
-Complex Complex::operator+(const Complex comp) const
+Complex& Complex::operator+(const Complex &comp) const
 {
 	Complex res = *this;
 	res += comp;
@@ -45,7 +45,7 @@ Complex Complex::operator+(const Complex comp) const
 }
 
 // Substract a complex to this
-Complex Complex::operator-(const Complex comp) const
+Complex& Complex::operator-(const Complex &comp) const
 {
 	Complex res = *this;
 	res -= comp;

@@ -15,8 +15,8 @@ class Complex {
 		std::string to_string() const;
 		Complex& operator+=(const Complex &comp);
 		Complex& operator-=(const Complex &comp);
-		Complex operator+(const Complex comp) const;
-		Complex operator-(const Complex comp) const;
+		Complex& operator+(const Complex &comp) const;
+		Complex& operator-(const Complex &comp) const;
 };
 
 #endif
