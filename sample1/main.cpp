@@ -20,7 +20,7 @@ int main () {
 
 	// Add comp_d to comp_a
 	std::cout << "\n// x = (" << comp_a.to_string() << ") + (" <<  comp_d.to_string() << ")" << std::endl;
-	Complex comp_e = comp_a + comp_d;
+	Complex comp_e = comp_a + comp_d + comp_c + comp_b;
 	std::cout << "=> " << comp_e.to_string() << std::endl;
 
 	// Substract comp_c to comp_e
