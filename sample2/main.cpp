@@ -42,8 +42,10 @@ double max(double a, double b)
  * @param b
  * @return 
  */
-double& max_2(double a, double b)
+double& max_2(double& a, double& b)
 {
+    std::cout << "infunc &a: " << &a << std::endl;
+    std::cout << "infunc &b: " << &b << std::endl;
     return (a > b) ? a : b;
 }
 
@@ -69,7 +71,11 @@ int main () {
 
     a = 376;
     b = 3;
+
+    std::cout << "&a: " << &a << std::endl;
+    std::cout << "&b: " << &b << std::endl;
     double& result_max2 = max_2(a, b);
+    std::cout << "&result_max2: " << &result_max2 << std::endl;
     std::cout << "max(" << a << ", " << b << ") = " << result_max2 << std::endl;
 
     return 0;
