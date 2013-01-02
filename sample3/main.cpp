@@ -3,7 +3,6 @@
 #include "dog.hpp"
 
 int main () {
-
   // Cat and dog instantiations
   Cat cat_jc("Jean-Claude", 14);
   Cat cat_jp("Jean-Pierre", 9);
