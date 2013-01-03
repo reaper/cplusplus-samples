@@ -9,7 +9,6 @@ int main () {
   Dog dog_h("Helios", 1);
 
   // Vector instantiation
-  // & iterator
   std::vector<Pet*> pets;
 
   // Insert cats and the dog into the vector

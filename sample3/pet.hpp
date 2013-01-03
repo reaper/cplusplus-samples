@@ -11,7 +11,7 @@ private:
     int m_age;
 
 protected:
-    Pet(const std::string& name, int age);
+    Pet(const std::string& name, int age) : m_name(name), m_age(age) {};
 
 public:
     std::string getName() const;
