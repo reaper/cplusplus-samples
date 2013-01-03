@@ -10,19 +10,18 @@ int main () {
 
   // Vector instantiation
   // & iterator
-  std::vector<Pet*> list;
-  std::vector<Pet*>::const_iterator i;
+  std::vector<Pet*> pets;
 
   // Insert cats and the dog into the vector
-  list.reserve(3);
-  list.push_back(&cat_jc);
-  list.push_back(&cat_jp);
-  list.push_back(&dog_h);
+  pets.reserve(3);
+  pets.push_back(&cat_jc);
+  pets.push_back(&cat_jp);
+  pets.push_back(&dog_h);
 
-  for (i = list.begin(); i != list.end(); ++i) {
+  for (std::vector<Pet*>::const_iterator pets_it = pets.begin(); pets_it != pets.end(); ++pets_it) {
     // Use the dynamic cast
-    Cat *cat = dynamic_cast<Cat*>(*i);
-    Dog *dog = dynamic_cast<Dog*>(*i);
+    Cat *cat = dynamic_cast<Cat*>(*pets_it);
+    Dog *dog = dynamic_cast<Dog*>(*pets_it);
 
     if (cat) {
       cat->pee("outside");

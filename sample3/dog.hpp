@@ -1,14 +1,13 @@
-#ifndef DOG_H_
-#define DOG_H_
+#ifndef DOG_HPP_
+#define DOG_HPP_
 
 #include "pet.hpp"
 
 class Dog : public Pet {
-	public:
-    Dog();
-    Dog(std::string name, int age);
-    void pee(std::string place) const;
-    void vomit(std::string place) const;
+public:
+    Dog(const std::string& name, int age);
+    void pee(const std::string& place) const;
+    void vomit(const std::string& place) const;
 };
 
 #endif

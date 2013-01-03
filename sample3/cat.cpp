@@ -5,15 +5,12 @@
  * @param name
  * @param age
  */
-Cat::Cat(std::string name, int age) {
-  m_name = name;
-  m_age = age;
-}
+Cat::Cat(const std::string& name, int age) : Pet(name, age) {}
 
 /**
  * @brief The cat pees
  * @param place
  */
-void Cat::pee(std::string place) const {
-  std::cout << "The cat named " << m_name << " pees " << place << " !" << std::endl;
+void Cat::pee(const std::string& place) const {
+  std::cout << "The cat named " << getName() << " pees " << place << " !" << std::endl;
 }
