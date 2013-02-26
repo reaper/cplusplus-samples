@@ -25,6 +25,10 @@ namespace alpha
     public:
       MyClass(const MyClass::value_type& value) : MyClassBase<std::string>(value) {};
   };
+
+  void print(MyClass& mc) {
+    std::cout << mc.value() << std::endl;
+  }
 }
 
 namespace beta
@@ -34,6 +38,10 @@ namespace beta
     public:
       MyClass(const MyClass::value_type& value) : MyClassBase<double>(value) {};
   };
+
+  void print(MyClass& mc) {
+    std::cout << mc.value() << std::endl;
+  }
 }
 
 namespace gamma
