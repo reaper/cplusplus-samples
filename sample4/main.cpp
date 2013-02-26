@@ -23,7 +23,7 @@ namespace alpha
   class MyClass : public MyClassBase<std::string>
   {
     public:
-      MyClass(const MyClass::value_type& value) : MyClassBase(value) {};
+      MyClass(const MyClass::value_type& value) : MyClassBase<std::string>(value) {};
   };
 }
 
@@ -32,7 +32,7 @@ namespace beta
   class MyClass : public MyClassBase<double>
   {
     public:
-      MyClass(const MyClass::value_type& value) : MyClassBase(value) {};
+      MyClass(const MyClass::value_type& value) : MyClassBase<double>(value) {};
   };
 }
 
