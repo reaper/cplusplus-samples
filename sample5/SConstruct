@@ -1,3 +1,4 @@
-env = Environment()
+import os
+env = Environment(CXX=os.environ.get("CXX"))
 env.Append(CCFLAGS = '-g -Wall -Werror --std=c++11')
 env.Program(target='main', source=Glob('*.cpp'))
